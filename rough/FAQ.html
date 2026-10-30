@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>FAQ</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+ <div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+</div>
+
+<div class="content">
+ <h2>Frequently Asked Questions</h2><br>
+ <div class="box" style="width:100%; margin-bottom:15px">
+  <h4>1. Do you allow installment?</h4>
+  <p>Yes, pay 60% deposit and pay balance in 3-6 months.</p>
+ </div>
+ <div class="box" style="width:100%; margin-bottom:15px">
+  <h4>2. Do you give warranty?</h4>
+  <p>Yes, 6 months warranty for engine.</p>
+ </div>
+ <div class="box" style="width:100%; margin-bottom:15px">
+  <h4>3. Do you deliver upcountry?</h4>
+  <p>Yes we deliver to Jinja, Mbarara, Gulu etc.</p>
+ </div>
+ <div class="box" style="width:100%; margin-bottom:15px">
+  <h4>4. Are parts genuine?</h4>
+  <p>Yes, we import genuine parts.</p>
+ </div>
+</div>
+
+<footer>© 2026 Joseph Motorcycles</footer>
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+
+document.querySelectorAll('.box img, .gallery img, .content img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeImage();
+});
+</script>
+</body>
+</html>

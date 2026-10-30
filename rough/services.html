@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Services - Joseph Motorcycles</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+<div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+</div>
+
+<div class="content">
+ <h2>Our Garage Services</h2>
+ <p>Professional motorcycle servicing at Ndeeba, Kampala. Book online and save time.</p><br>
+
+ <div class="boxes">
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA6794.jpg">
+   <h4>Full Service</h4>
+   <p>Oil change, filter cleaning, brake check, chain adjustment</p>
+   <p><b>UGX 50,000</b></p>
+  </div>
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA4787.jpg">
+   <h4>Engine Overhaul</h4>
+   <p>Piston replacement, rings, engine rebuild</p>
+   <p><b>UGX 200,000</b></p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA6849.jpg">
+   <h4>Tyre & Tube Fixing</h4>
+   <p>New tyres, puncture repair, wheel alignment</p>
+   <p><b>UGX 30,000</b></p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA1801.jpg">
+   <h4>Wiring & Electrical</h4>
+   <p>Battery check, lights, indicators, horn fixing</p>
+   <p><b>UGX 40,000</b></p>
+  </div>
+ </div>
+
+ <br><br>
+ <div class="box" style="width:100%">
+  <h3>Book Service Now</h3><br>
+  <p>Call: 0700 123 456 or Go to Contact Page</p><br>
+  <a class="btn" href="contact.html">Book Service</a>
+ </div>
+</div>
+
+<footer>© 2026 Joseph Motorcycles - Ndeeba Garage</footer>
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+
+document.querySelectorAll('.box img, .gallery img, .content img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeImage();
+});
+</script>
+</body>
+</html>

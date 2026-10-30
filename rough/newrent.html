@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head><title>New & Old Bikes For Rent - Joseph Motorcycles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+ <div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+</div>
+
+<div class="content">
+ <h2>Bikes For Rent - New & Old Bikes Ready for Boda Work</h2>
+ <p>Start business today - Daily, Weekly, and Kibaluwa Rent To Own.</p>
+
+ <h3 style="color:green;">A. DAILY RENT - Ready To Ride</h3>
+ <div class="boxes">
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA1218.jpg">
+   <h4>Daily Rent - Bajaj Boxer</h4>
+   <p>Helmet + Reflector Jacket Included, Service Included</p>
+   <p><b>UGX 15,000 - 20,000 / Day</b></p>
+   <p>Requirements: National ID, LC1 Letter, Permit</p>
+   <a class="btn" href="contact.html">Rent Daily</a>
+  </div>
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA5536.jpg">
+   <h4>Old Bike Daily Rent - Cheaper Option</h4>
+   <p>Second hand bikes for daily rent, Lower price for beginners</p>
+   <p><b>UGX 10,000 / Day</b></p>
+   <a class="btn" href="contact.html">Rent Old Bike</a>
+  </div>
+ </div>
+
+ <h3 style="color:blue; margin-top:30px;">B. KIBALUWA - Rent To Own (Weekly)</h3>
+ <div class="boxes">
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA7684.jpg">
+   <h4>Rent To Own - TVS HLX 125</h4>
+   <p>Pay Weekly for 52 Weeks, Bike Becomes Yours, Logbook After Payment</p>
+   <p><b>UGX 35,000 / Week</b> - Contract Agreement</p>
+   <a class="btn" href="contact.html">Start Kibaluwa</a>
+  </div>
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA0780.jpg">
+   <h4>New Bike Weekly Rent</h4>
+   <p>Brand new bike for weekly rent, For serious riders</p>
+   <p><b>UGX 90,000 / Week</b> - All Maintenance Included</p>
+   <a class="btn" href="contact.html">Rent Weekly</a>
+  </div>
+ </div>
+</div>
+<footer>© 2026 Joseph Motorcycles - Rent New & Old Boda Bodas</footer>
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+
+document.querySelectorAll('.box img, .gallery img, .content img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeImage();
+});
+</script>
+</body>
+</html>

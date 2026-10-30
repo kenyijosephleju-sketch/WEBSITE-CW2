@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery - Joseph Motorcycles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+
+.filter-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+.filter-bar select {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ff6600;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  min-width: 250px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.gallery-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.gallery-item p {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+
+<div class="content">
+ <h2 style="text-align:center;">Bike Gallery - Tap Image to Expand</h2>
+
+ 
+ <div class="filter-bar">
+  <label for="bikeFilter"><b>Filter By: </b></label>
+  <select id="bikeFilter" onchange="filterGallery()">
+   <option value="all">Show All Bikes</option>
+   <option value="new">Brand New Bikes - For Sale</option>
+   <option value="old">Old / Second Hand Bikes</option>
+   <option value="rent">Bikes For Rent - Daily</option>
+   <option value="kibaluwa">Kibaluwa Rent To Own</option>
+   <option value="spare">Spare Parts</option>
+   <option value="service">Garage Services</option>
+  </select>
+ </div>
+
+ <div class="gallery-grid" id="galleryGrid">
+  
+  <div class="gallery-item" data-category="new">
+   <img src="pictures/IMG-20261028-WA0780.jpg" alt="New Bikes Showroom">
+   <p>NEW - Bajaj & TVS Showroom - UGX 4.9M</p>
+  </div>
+  <div class="gallery-item" data-category="new">
+   <img src="pictures/tvs/images (2).jpeg" alt="TVS HLX New">
+   <p>NEW - TVS HLX 150 - Brand New</p>
+  </div>
+
+  
+  <div class="gallery-item" data-category="old">
+   <img src="pictures/IMG-20261028-WA5536.jpg" alt="Old Bikes Yard">
+   <p>OLD - Used Bikes Yard Ndeeba - 1.2M-2.5M</p>
+  </div>
+  <div class="gallery-item" data-category="old">
+   <img src="pictures/bajaj/bajaj-good-1.jpg" alt="Bajaj Boxer Used">
+   <p>OLD - Bajaj Boxer Used - Tested</p>
+  </div>
+
+  
+  <div class="gallery-item" data-category="rent">
+   <img src="pictures/IMG-20261028-WA1218.jpg" alt="Daily Rent">
+   <p>RENT - Daily Rent Boda - UGX 15k/Day</p>
+  </div>
+  <div class="gallery-item" data-category="rent">
+   <img src="pictures/IMG-20261028-WA7684.jpg" alt="Old Rent">
+   <p>RENT - Old Bike Cheap Daily Rent</p>
+  </div>
+
+  
+  <div class="gallery-item" data-category="kibaluwa">
+   <img src="pictures/IMG-20261028-WA7684.jpg" alt="Kibaluwa Rent To Own">
+   <p>KIBALUWA - Rent To Own - UGX 35k/Week</p>
+  </div>
+  <div class="gallery-item" data-category="kibaluwa">
+   <img src="pictures/IMG-20261028-WA1218.jpg" alt="Weekly Rent New">
+   <p>KIBALUWA - New Bike Weekly Rent</p>
+  </div>
+
+  
+  <div class="gallery-item" data-category="spare">
+   <img src="pictures/IMG-20261028-WA8287.jpg" alt="Spare Parts">
+   <p>SPARE PARTS - Genuine Bajaj TVS</p>
+  </div>
+  <div class="gallery-item" data-category="service">
+   <img src="pictures/IMG-20261028-WA9079.jpg" alt="Garage Service">
+   <p>SERVICE - Full Garage Service UGX 30k</p>
+  </div>
+ </div>
+</div>
+
+
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+function filterGallery() {
+  var filter = document.getElementById('bikeFilter').value;
+  var items = document.querySelectorAll('.gallery-item');
+  
+  items.forEach(item => {
+    if (filter === 'all' || item.dataset.category === filter) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+</script>
+
+<footer>© 2026 Joseph Motorcycles Ndeeba - Gallery with Dropdown Filter</footer>
+</body>
+</html>

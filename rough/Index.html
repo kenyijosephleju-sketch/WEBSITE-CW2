@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Joseph Motorcycles - Home</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+ <div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+</div>
+
+<div class="hero">
+ <h1>Welcome to Joseph Motorcycles</h1>
+ <p>We sell genuine motorcycles and spare parts at affordable prices. We also offer garage services.</p>
+ <a class="btn" href="gallery.html">View Motorcycles</a>
+</div>
+
+<div class="content">
+ <h2>Our Popular Bikes</h2><br>
+ <div class="boxes">
+  <div class="box">
+   <img src="pictures/bajaj/Reliablity.webp">
+   <h4>Bajaj Boxer 150</h4>
+   <p>Price: UGX 5,200,000</p>
+  </div>
+  <div class="box">
+   <img src="pictures/tvs/images (2).jpeg">
+   <h4>TVS HLX 150</h4>
+   <p>Price: UGX 5,800,000</p>
+  </div>
+  <div class="box">
+   <img src="pictures/IMG-20260926-WA1773.jpg">
+   <h4>TVS LX 600 125</h4>
+   <p>Price: UGX 3,900,000</p>
+  </div>
+   <div class="box">
+   <img src="pictures/IMG-20260926-WA8924.jpg">
+   <h4>TVS HLX 150</h4>
+   <p>Price: UGX 5,800,000</p>
+  </div>
+ </div>
+</div>
+
+<footer>
+ <p>Joseph Motorcycles | Ndeeba Kampala | 0700123456 </p>
+</footer>
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+
+document.querySelectorAll('.box img, .gallery img, .content img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeImage();
+});
+</script>
+</body>
+</html>

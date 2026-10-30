@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Spare Parts - Joseph Motorcycles</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+ <div class="navbar">
+ <h3>JOSEPH MOTORCYCLES</h3>
+ <div class="nav-links">
+  <a href="index.html">HOME</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="newsale.html">NEW & OLD SALE</a>
+  <a href="newrent.html">NEW & OLD RENT</a>
+  <a href="spareparts.html">SPARES</a>
+  <a href="services.html">SERVICES</a>
+  <a href="about.html">ABOUT</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">CONTACT</a>
+ </div>
+</div>
+</div>
+
+<div class="content">
+ <h2>Genuine Spare Parts</h2>
+ <p>We sell only original Bajaj, TVS, Haojue parts. All parts have warranty.</p><br>
+ 
+ <div class="boxes">
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA6910.jpg">
+   <h4>Engine Parts</h4>
+   <p>Piston, Rings, Cylinder - UGX 80,000 to 250,000</p>
+  </div>
+  <div class="box">
+   <img src="pictures/IMG-20261028-WA0318.jpg">
+   <h4>Tyres & Tubes</h4>
+   <p>Bajaj 100/90-17, TVS Duragrip - UGX 120,000</p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA3718.jpg">
+   <h4>Brake System</h4>
+   <p>Brake Pads, Brake Shoes, Disc - UGX 25,000 to 60,000</p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA9220.jpg">
+   <h4>Chain & Sprocket</h4>
+   <p>Chain 428, Front & Rear Sprocket - UGX 70,000 Set</p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA1801.jpg">
+   <h4>Electrical</h4>
+   <p>Spark Plug, Battery, Indicator - UGX 15,000 to 150,000</p>
+  </div>
+  <div class="box">
+    <img src="pictures/IMG-20261028-WA0543.jpg">
+   <h4>Oil & Filters</h4>
+   <p>Engine Oil 20W-50, Oil Filter, Air Filter - UGX 30,000</p>
+  </div>
+ </div>
+</div>
+
+<footer>© 2026 Joseph Motorcycles - All Genuine Parts</footer>
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img id="modalImg" src="">
+</div>
+
+<script>
+
+document.querySelectorAll('.box img, .gallery img, .content img').forEach(img => {
+  img.addEventListener('click', function() {
+    document.getElementById('modalImg').src = this.src;
+    document.getElementById('imageModal').classList.add('active');
+  });
+});
+
+function closeImage() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeImage();
+});
+</script>
+</body>
+</html>
